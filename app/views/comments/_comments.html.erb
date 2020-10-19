@@ -1,0 +1,27 @@
+<h3>Comments</h3>
+<% @post.comments.each do |comment| %>
+  <div class="card">
+    <p><strong><%= comment.username %></strong>: <%= comment.body %>
+      <%= link_to '[x]', [comment.post, comment],
+            method: :delete,
+            data: { confirm: 'Are you sure?'} %>
+    </p>
+  </div>
+<% end %>
+
+<style>
+  .btn-default{
+    cursor: pointer;
+    border-color: #343a40;
+  }
+  .btn-danger {
+    background-color: #343a40;
+    border-color: #343a40;
+  }
+  p {
+    font-size: .8rem;
+  }
+  .card {
+    background-color: #f1ffe0;
+  }
+</style>

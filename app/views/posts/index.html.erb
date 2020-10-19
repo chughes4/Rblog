@@ -1,0 +1,32 @@
+<h1 style="margin-top: 100px">RBlog Post</h1>
+<% @posts.each do |post| %>
+  <div class="card">
+    <h3 style="margin-top: 40px"><%= post.title %></h3>
+    <p><%= post.body %></p>
+    <%= link_to "Read more", post_path(post), :class => 'btn-primary' %>
+  </div> 
+<% end %>
+
+<style>
+   h3 {
+     margin-top: 40px;
+     margin-right: 0px;
+     margin-left: 20px;
+   }
+
+   p {
+      margin-top: 40px;
+      margin-right: 0px;
+      margin-left: 20px;
+  
+   }
+
+  .btn-primary {
+      color: #fff;
+      background-color: #343a40;
+      border-color: #111;
+  }
+  .card {
+    background-color: #f1ffe0
+  }
+</style>

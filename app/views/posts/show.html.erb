@@ -1,0 +1,29 @@
+<h2 style="margin-top: 100px" ><%= @post.title %></h2>
+<p><%= @post.body %></p>
+<hr>
+<%= link_to "Edit", edit_post_path(@post), :class => 'btn btn-default' %>
+
+<%= link_to "Delete", post_path(@post), 
+            method: :delete,
+            data: {confirm: 'Are you sure?'}, 
+            :class => 'btn btn-danger' %>
+<hr>
+
+<%= render 'comments/comments' %>
+
+<%= render 'comments/form' %>
+
+<style>
+  .btn-default{
+    cursor: pointer;
+    border-color: #343a40;
+  }
+  .btn-danger {
+    background-color: #343a40;
+    border-color: #343a40;
+  }
+  p{
+    font-size: .8rem;
+  }
+</style>
+

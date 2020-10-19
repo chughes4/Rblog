@@ -1,0 +1,29 @@
+<h3>Add Comment</h3>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <p>
+    <%= f.label :username %><br>
+    <%= f.text_field(:username, {:class => 'form-control'}) %>
+  </p>
+  <p>
+    <%= f.label :body %><br>
+    <%= f.text_area(:body, {:class => 'form-control'}) %>
+  </p>
+  <p>
+    <%= f.submit({:class => 'btn btn-default'}) %>
+  </p>
+<% end %>
+
+<style>
+  .btn-default{
+    cursor: pointer;
+    border-color: #343a40;
+  }
+  .btn-danger {
+    background-color: #343a40;
+    border-color: #343a40;
+  }
+  p{
+    font-size: .8rem;
+  }
+</style>
+
